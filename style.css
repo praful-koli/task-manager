@@ -213,7 +213,7 @@ textarea,select {
    
 }
 .task-list-container .task-header .delete-all-btn{
-  font-size: 0.000rem;
+  font-size: 0.900rem;
   color: var(--high);
   background-color:#2A1A20 ;
   border: 2px solid #68202d;
@@ -351,7 +351,7 @@ textarea,select {
   height: fit-content;
   
 
-  
+
   border-radius:4px ;
   background-color: #71293662;
   box-shadow: 0px 0px 5px #8a384762 ; 
