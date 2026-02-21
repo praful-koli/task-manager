@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taskManager</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <main class="container">
+        <div class="task-container">
+            <!-- header -->
+            <div class="header">
+                <div class="logo-dot"></div>
+                <h2>Your Personalised Task List</h2>
+            </div>
+            <!-- task form section -->
+            <div class="task-form-container">
+                <h1 class="title">ADD NEW TASK</h1>
+
+                <div class="form-container">
+
+                    <div class=" task-input-box ">
+                        <label for="tasks-name">TASK NAME</label>
+                        <input type="text" class="task-name" id="tasks-name" placeholder="What needs to be done?" required>
+                    </div>
+
+                    <div class=" task-input-box ">
+                        <label for="tasks-details">TASK DETAILS</label>
+                        <textarea class="task-details" id="tasks-details" placeholder="Add a description..." required></textarea>
+                    </div>
+
+                    <div class="task-important task-input-box">
+                        <span class="toggle-label"><span>⭐</span> Mark as Important</span>
+                        <input class="check" style="width: fit-content;" type="checkbox" id="isImportant">
+                    </div>
+
+                    <div class="task-priority task-input-box">
+                        <label>PRIORITY</label>
+                        <select id="priority" class="priority">
+                            <option value="low">🔵 Low Priority</option>
+                            <option value="medium">🟡 Medium Priority</option>
+                            <option value="high">🔴 High Priority</option>
+                        </select>
+                    </div>
+                    <button class="add-btn"> Add Task</button>
+
+                </div>
+
+            </div>
+
+            <!-- task list section -->
+            <div class="task-list-container">
+
+                <div class="task-header">
+                    <h2 class="task-title">
+                        ALL TASKS
+                        <span class="count-badge" id="taskCount">0</span>
+                    </h2>
+                    <button class="delete-all-btn" >Delete All</button>
+                </div>
+                <!-- task -->
+                <div class="tasks-list" id="tasksList">
+                    
+                    <div class="empty">
+                        <div class="empty-icon">📋</div>
+                        <p>No tasks yet.<br>Add one to get started!</p>
+                    </div>
+                   
+                </div>
+            </div>
+
+        </div>
+
+
+        </div>
+    </main>
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
+
