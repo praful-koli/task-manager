@@ -94,7 +94,7 @@ body {
 }
 
 .container .task-container .header>h2 {
-  font-size: 1.02rem;
+  font-size: 1.52rem;
   font-weight: 500;
 }
 
@@ -117,7 +117,7 @@ body {
 }
 
 .task-form-container .title {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 500;
   text-align: center;
   background: linear-gradient(to right, #ada7a7, #434343, #000000);
@@ -147,7 +147,7 @@ body {
   display: flex;
   flex-direction: column;
   color: #59596c;
-  font-size: 0.742rem;
+  font-size: 0.942rem;
 }
 
 .task-form-container .form-container .task-input-box input,
@@ -156,9 +156,9 @@ textarea,select {
   outline: none;
   background-color: #1C1C27;
   color: #59596c;
-  padding: 13px 20px;
+  padding: 16px 25px;
   border-radius: 10px;
-  font-size: 0.752rem;
+  font-size: 0.952rem;
 }
 
 .task-form-container .form-container .task-important {
@@ -173,14 +173,14 @@ textarea,select {
  
 }
 .task-form-container .form-container .task-important > span {
-  font-size: 0.874rem;
+  font-size: 0.974rem;
   color: #b5b59d;
 }
 .task-form-container .form-container .add-btn{
   padding: 10px 20px;
   background-color:#7C6AF7 ;
   color:whitesmoke;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -196,7 +196,7 @@ textarea,select {
    border: 1px solid var(--border);
 }
 .task-list-container .task-header .task-title {
-   font-size: 1rem;
+   font-size: 1.1rem;
    font-weight: 400;
    color: #434343;
    display: flex;
@@ -207,13 +207,13 @@ textarea,select {
    background-color: #1C1C27;
    border: 1px solid var(--border);
    color: whitesmoke;
-   font-size: 0.722rem;
+   font-size: 0.872rem;
    padding: 0px 6px;
    border-radius: 50%;
    
 }
 .task-list-container .task-header .delete-all-btn{
-  font-size: 0.700rem;
+  font-size: 0.000rem;
   color: var(--high);
   background-color:#2A1A20 ;
   border: 2px solid #68202d;
@@ -265,7 +265,7 @@ textarea,select {
 
 
 .task-list-container .tasks-list .task .left .task-title{
-   font-size: 0.708rem;
+   font-size: 0.908rem;
 }
 .task-list-container .tasks-list .task .left .task-content{
    margin-bottom: 15px;
@@ -275,7 +275,7 @@ textarea,select {
 }
 
 .task-list-container .tasks-list .task .left .task-description{
-   font-size: 0.638rem;
+   font-size: 0.838rem;
    color:#59596c;
 }
 
@@ -310,7 +310,7 @@ textarea,select {
 }
 /* task-staus */
 .task-list-container .tasks-list .task .left .status-display .task-status{
- font-size: 0.528rem;
+ font-size: 0.728rem;
   padding: 2px 6px;
   border-radius:4px ;
   background-color: #484747;
@@ -320,7 +320,7 @@ textarea,select {
 
 /* tast priorty style  */
 .task-list-container .tasks-list .task .left .status-display .task-text-priority{
-  font-size: 0.478rem;
+  font-size: 0.778rem;
   padding: 2px 6px;
   border-radius:4px ;
   background-color: #68202d;
