@@ -19,13 +19,12 @@ let currentFilter = "all";
 function setFilter(filterValue, btnEl) {
   currentFilter = filterValue;
 
-  // update active tab highlight
+  
   document.querySelectorAll(".filter-tab").forEach((btn) =>
     btn.classList.remove("active")
   );
   btnEl.classList.add("active");
 
-  // re-render with the new filter
   loadTasksFromLocalStorage();
 }
 // ──────────────────────────────────────────────────────────────────────────
@@ -45,7 +44,7 @@ function saveTaskLocalStorage(task) {
   localStorage.setItem("task", newTasks);
 }
 
-// ── NEW: update a single task's status in localStorage ─────────────────────
+
 function updateTaskStatusInLocalStorage(title, newStatus) {
   let tasks = JSON.parse(getTasksLocalStorage());
   tasks = tasks.map((t) => {
@@ -56,7 +55,7 @@ function updateTaskStatusInLocalStorage(title, newStatus) {
   });
   localStorage.setItem("task", JSON.stringify(tasks));
 }
-// ──────────────────────────────────────────────────────────────────────────
+
 
 // save task to localStorage
 function addTasks(e) {
@@ -136,7 +135,8 @@ function loadTasksFromLocalStorage() {
         </div>
       </div>
       <div class="right">
-        <i class="ri-close-line"></i>
+      <div class="edit"><i class="ri-pencil-line"></i></div>
+        <div><i class="ri-close-line"></i></div>
       </div>
     `;
 
@@ -185,6 +185,12 @@ function loadTasksFromLocalStorage() {
     });
 
     taskList.append(task);
+
+
+    const edit = task.querySelector('.ri-pencil-line')
+    edit.addEventListener('click',()=> {
+          openEditModal(taskData)
+      })
   });
 
   document.querySelector("#taskCount").textContent = tasks.length;
@@ -208,3 +214,66 @@ delteAllTask.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
   loadTasksFromLocalStorage();
 });
+
+
+
+
+
+
+
+
+
+// EDIT MODAL 
+let editingTitle = null; 
+
+// OPEN — 
+function openEditModal(task) {
+  editingTitle = task.title;
+
+  document.getElementById("edit-title").value       = task.title;
+  document.getElementById("edit-desc").value        = task.description;
+  document.getElementById("edit-important").checked = task.important;
+  document.getElementById("edit-priority").value    = task.priority;
+
+  const overlay = document.getElementById("edit-overlay");
+  overlay.style.display = "block";
+  requestAnimationFrame(() => overlay.classList.add("open")); 
+}
+
+// CLOSE 
+function closeEditModal() {
+  const overlay = document.getElementById("edit-overlay");
+  overlay.classList.remove("open"); 
+  setTimeout(() => {
+    overlay.style.display = "none";
+    editingTitle = null;
+  }, 360); 
+}
+
+// SAVE
+function saveEditedTask() {
+  if (!editingTitle) return;
+
+  let tasks = JSON.parse(getTasksLocalStorage());
+
+  tasks = tasks.map((t) => {
+    if (t.title === editingTitle) {
+      return {
+        ...t, 
+        title:       document.getElementById("edit-title").value.trim(),
+        description: document.getElementById("edit-desc").value.trim(),
+        important:   document.getElementById("edit-important").checked,
+        priority:    document.getElementById("edit-priority").value,
+      };
+    }
+    return t;
+  });
+
+  localStorage.setItem("task", JSON.stringify(tasks));
+  closeEditModal();
+  loadTasksFromLocalStorage(); 
+}
+
+document.getElementById("edit-close-btn").addEventListener("click", closeEditModal);
+document.getElementById("edit-save-btn").addEventListener("click", saveEditedTask);
+

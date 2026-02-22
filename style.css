@@ -334,14 +334,22 @@ textarea,select {
 }
 
 /* task right */
-
+.task-list-container .tasks-list .task .right {
+  height: 100%;
+   gap:20px;
+   display: flex;
+}
+.task-list-container .tasks-list .task .right .edit:hover {
+  width: fit-content;
+  height: fit-content;
+  border-radius:4px ;
+  background-color: #29714d62;
+  box-shadow: 0px 0px 5px #388a4e62 ; 
+}
 /* delete task button  */
 .task-list-container .tasks-list .task .right i:hover {
   width: fit-content;
   height: fit-content;
-  
-
-
   border-radius:4px ;
   background-color: #71293662;
   box-shadow: 0px 0px 5px #8a384762 ; 
@@ -380,3 +388,138 @@ textarea,select {
   border-color: rgba(124,106,247,0.3);
   color: #a78bfa;
 }
+
+
+
+
+/* edit-panel */
+#edit-panel {
+  position: fixed;
+  top: 0; right: 0;
+  width: 50%;
+  height: 100%;
+  background: #13131A;
+  border-left: 1px solid rgba(255,255,255,0.08);
+  z-index: 1000;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  overflow-y: auto;
+
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+
+
+#edit-overlay.open #edit-panel {
+  transform: translateX(0);
+}
+
+#edit-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#edit-panel-header h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #f0f0f8;
+}
+
+#edit-close-btn {
+  width: 32px;
+  height: 32px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  color: #6b6b80;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#edit-close-btn:hover {
+  background: rgba(247,90,90,0.12);
+  color: #f75a5a;
+  border-color: rgba(247,90,90,0.3);
+}
+
+.edit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-field label {
+  font-size: 0.70rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #59596c;
+}
+
+.edit-field input[type="text"],
+.edit-field textarea,
+.edit-field select {
+  background: #1C1C27;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 13px 16px;
+  color: #f0f0f8;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  resize: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.edit-field textarea { height: 110px; }
+
+.edit-field input[type="text"]:focus,
+.edit-field textarea:focus,
+.edit-field select:focus {
+  border-color: #7c6af7;
+  box-shadow: 0 0 0 3px rgba(124,106,247,0.13);
+}
+
+
+.edit-important-row {
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+  background: #1C1C27;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 13px 16px;
+  color: #b5b59d;
+  font-size: 0.9rem;
+}
+
+.edit-important-row input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  accent-color: #7c6af7;
+}
+
+/* save button */
+#edit-save-btn {
+  margin-top: auto;
+  padding: 14px;
+  background: linear-gradient(135deg, #7c6af7, #6366f1);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+
+#edit-save-btn:active { transform: translateY(0); }

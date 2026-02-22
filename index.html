@@ -80,7 +80,46 @@
             </div>
 
         </div>
+      
 
+        
+  <!-- EDIT MODAL -->
+  <div id="edit-overlay">
+    <div id="edit-panel">
+
+      <div id="edit-panel-header">
+        <h3>✏️ Edit Task</h3>
+        <button id="edit-close-btn">✕</button>
+      </div>
+
+      <div class="edit-field">
+        <label>TASK NAME</label>
+        <input type="text" id="edit-title" placeholder="Task name" />
+      </div>
+
+      <div class="edit-field">
+        <label>TASK DETAILS</label>
+        <textarea id="edit-desc" placeholder="Description..."></textarea>
+      </div>
+
+      <div class="edit-field edit-important-row">
+        <span>⭐ Mark as Important</span>
+        <input type="checkbox" id="edit-important" />
+      </div>
+
+      <div class="edit-field">
+        <label>PRIORITY</label>
+        <select id="edit-priority">
+          <option value="low">🔵 Low Priority</option>
+          <option value="medium">🟡 Medium Priority</option>
+          <option value="high">🔴 High Priority</option>
+        </select>
+      </div>
+
+      <button id="edit-save-btn">💾 Save Changes</button>
+
+    </div>
+  </div>
 
         </div>
     </main>
