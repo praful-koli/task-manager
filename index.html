@@ -25,12 +25,14 @@
 
                     <div class=" task-input-box ">
                         <label for="tasks-name">TASK NAME</label>
-                        <input type="text" class="task-name" id="tasks-name" placeholder="What needs to be done?" required>
+                        <input type="text" class="task-name" id="tasks-name" placeholder="What needs to be done?"
+                            !required!>
                     </div>
 
                     <div class=" task-input-box ">
                         <label for="tasks-details">TASK DETAILS</label>
-                        <textarea class="task-details" id="tasks-details" placeholder="Add a description..." required></textarea>
+                        <textarea class="task-details" id="tasks-details" placeholder="Add a description..."
+                            !required></textarea>
                     </div>
 
                     <div class="task-important task-input-box">
@@ -60,16 +62,20 @@
                         ALL TASKS
                         <span class="count-badge" id="taskCount">0</span>
                     </h2>
-                    <button class="delete-all-btn" >Delete All</button>
+                    <button class="delete-all-btn">Delete All</button>
+                </div>
+
+                <div class="filter-tabs">
+                    <button class="filter-tab active" onclick="setFilter('all', this)">All</button>
+                    <button class="filter-tab" onclick="setFilter('not-started', this)">⏸ Not Started</button>
+                    <button class="filter-tab" onclick="setFilter('in-progress', this)">⚡ In Progress</button>
+                    <button class="filter-tab" onclick="setFilter('completed', this)">✅ Completed</button>
                 </div>
                 <!-- task -->
                 <div class="tasks-list" id="tasksList">
-                    
-                    <div class="empty">
-                        <div class="empty-icon">📋</div>
-                        <p>No tasks yet.<br>Add one to get started!</p>
-                    </div>
-                   
+
+                  
+
                 </div>
             </div>
 
@@ -85,4 +91,3 @@
 </body>
 
 </html>
-
